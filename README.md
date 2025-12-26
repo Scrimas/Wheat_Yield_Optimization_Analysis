@@ -1,5 +1,3 @@
-# Wheat_Yield_Optimization_Analysis
-
 # Wheat Yield Optimization Analysis
 
 This repository contains a biostatistical analysis aimed at optimizing wheat production by evaluating the impact of two factors: **Genotype** (Wheat Variety) and **Fertilizer Type**.
