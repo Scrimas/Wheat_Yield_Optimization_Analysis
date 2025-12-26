@@ -22,7 +22,7 @@ We investigate three biological questions:
 **Method:** Two-Way ANOVA (Analysis of Variance) with interaction term.
 **Prerequisites:** Normality (Shapiro-Wilk) and Homoscedasticity (Bartlett test) were validated ($p > 0.05$).
 
-## Key Results
+## Main Results
 
 * **Bartlett Test:** Variances are homogeneous ($p = 0.103$).
 * **ANOVA Results:**
@@ -33,7 +33,7 @@ We investigate three biological questions:
 **Biological Conclusion:**
 The analysis reveals a strong interaction. The efficiency of a specific fertilizer depends heavily on the wheat variety used. A generalized recommendation cannot be made; the fertilizer must be adapted to the specific wheat strain.
 
-## Tech Stack
+## Tools Used
 
 * **R** : `aov`, `bartlett.test`
 * **Python** : `pandas`, `statsmodels` (OLS Regression & ANOVA table), `scipy`
