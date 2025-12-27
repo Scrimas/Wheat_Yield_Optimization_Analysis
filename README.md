@@ -1,40 +1,38 @@
 # Wheat Yield Optimization Analysis
 
-This repository contains a biostatistical analysis aimed at optimizing wheat production by evaluating the impact of two factors: **Genotype** (Wheat Variety) and **Fertilizer Type**.
+This repository contains a biostatistical analysis aimed at optimizing wheat production by evaluating the combined effects of **Genotype** (Wheat Variety) and **Fertilizer Type** on yield.
 
-Originally conducted using R during my **L3 Biology degree (Université Grenoble Alpes)**, this project has been reproduced in Python to demonstrate workflow automation and statistical modeling skills.
+This project was initially carried out as part of my **Bachelor's degree in Biology (Grenoble Alpes University)** using R, then reproduced in Python to develop my data science skills.
 
-## Project Structure
+## Project structure
 
-* `data/` : Cleaned dataset in CSV format (long format).
-* `r_analysis/` : Original Academic script (ANOVA methodology).
-* `python_reproduction/` : Implementation using `statsmodels` and `pandas`.
+* `data/`: Contains the cleaned dataset (`.csv`).
+* `r_analysis/`: Original analysis script (academic methodology).
+* `python_reproduction/`: Counter-expertise and automation performed in Python (Pandas/Statsmodels).
 
 ## Statistical Methodology
 
-We investigate three biological questions:
-1. Does the wheat variety influence yield?
-2. Does the fertilizer type influence yield?
-3. **Is there an interaction between the variety and the fertilizer?**
+The study utilizes a **Two-Way ANOVA** (Analysis of Variance) to investigate interaction effects.
 
-**Method:** Two-Way ANOVA (Analysis of Variance) with interaction term.
-**Prerequisites:** Normality (Shapiro-Wilk) and Homoscedasticity (Bartlett test) were validated ($p > 0.05$).
+1.  **Assumption Checking**: Verification of homoscedasticity ($H_0$: Equal variances) using **Bartlett's test**.
+2.  **Modeling**: Assessment of main effects and interaction term ($Yield \sim Wheat \times Fertilizer$).
+3.  **Validation**: Analysis of the interaction significance to determine the biological conclusion.
 
 ## Main Results
 
-* **Bartlett Test:** Variances are homogeneous ($p = 0.103$).
-* **ANOVA Results:**
-    * Effect of Wheat Type: **Highly Significant** ($p < 0.001$).
-    * Effect of Fertilizer: **Highly Significant** ($p < 0.001$).
-    * **Interaction Effect:** **Significant** ($p < 0.001$).
+| Test | P-value | Interpretation |
+| :--- | :--- | :--- |
+| **Bartlett Test** | $0.103$ | **Homogeneity Accepted** (ANOVA is valid) |
+| **ANOVA (Interaction)** | $< 0.001$ | **Significant Interaction** |
 
-**Biological Conclusion:**
-The analysis reveals a strong interaction. The efficiency of a specific fertilizer depends heavily on the wheat variety used. A generalized recommendation cannot be made; the fertilizer must be adapted to the specific wheat strain.
+**Biological conclusion:**
+The analysis reveals a highly significant interaction between the factors. The efficiency of a specific fertilizer depends heavily on the wheat variety used. Therefore, no generalized recommendation can be made; the fertilizer strategy must be adapted to the specific wheat strain.
 
 ## Tools Used
 
-* **R** : `aov`, `bartlett.test`
-* **Python** : `pandas`, `statsmodels` (OLS Regression & ANOVA table), `scipy`
+* **R**: `aov`, `bartlett.test` (Academic standard)
+* **Python**: `pandas`, `statsmodels`, `scipy` (Automation & Engineering)
 
 ---
+
 *Author: Ismaël PHILIPPE - Biology Student*
